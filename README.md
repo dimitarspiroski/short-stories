@@ -30,10 +30,6 @@ The application has a role-based system where users can have one of the followin
 2. **Data Management**: Data is fetched and manipulated through Angular services that communicate with the backend (Firebase or custom REST APIs).
 3. **UI Updates**: Components are responsible for presenting the data in the UI, using **RxJS** observables to handle asynchronous data.
 
-## Getting Started
-
-To get the project up and running locally, follow the steps below:
-
 ## Scripts
 
 **Local**: Starts the Angular development server with Hot Module Replacement (HMR) disabled and automatically opens the app in your browser. You can run this with the following command:
