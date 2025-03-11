@@ -16,14 +16,6 @@ This project utilizes a modern stack with the following key technologies:
 - **Tailwind CSS** - A utility-first CSS framework that enables rapid UI design.
 - **Flowbite** - A UI component library built on top of Tailwind CSS, providing pre-designed, responsive components.
 
-## Architecture
-
-The **Short Stories** project is built using the **Model-View-Controller (MVC)** architecture with Angular as the framework, following best practices for modular and scalable application design.
-
-- **Model**: Represents the data structure of the app. This includes user models (Reader, Author, Editor), stories, and novels.
-- **View**: The UI layer built with Angular components, styled using **Tailwind CSS** and **Flowbite** for reusable UI components.
-- **Controller**: The component classes in Angular that handle business logic. Each component communicates with services to manage data and update the UI.
-
 ### Role-based Access Control (RBAC)
 
 The application has a role-based system where users can have one of the following roles:
