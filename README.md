@@ -1,59 +1,57 @@
-# ShortStories
+# Short Stories
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Welcome to the **Short Stories** project! This web application allows users to explore, write, and manage short stories and novels. The platform is designed with multiple user roles: **Readers**, **Authors**, and **Editors** (Admins). Each role has specific capabilities, from reading and writing stories to reviewing and managing content.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Readers** can explore and read stories and novels.
+- **Authors** can write and submit stories and novels for review.
+- **Editors** (Admins) can review and approve submitted content, manage authors, and select featured stories (Editor's Choice).
 
-```bash
-ng serve
-```
+## Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This project utilizes a modern stack with the following key technologies:
 
-## Code scaffolding
+- **Angular 19** - A powerful framework for building dynamic single-page applications (SPAs).
+- **Tailwind CSS** - A utility-first CSS framework that enables rapid UI design.
+- **Flowbite** - A UI component library built on top of Tailwind CSS, providing pre-designed, responsive components.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Architecture
 
-```bash
-ng generate component component-name
-```
+The **Short Stories** project is built using the **Model-View-Controller (MVC)** architecture with Angular as the framework, following best practices for modular and scalable application design.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Model**: Represents the data structure of the app. This includes user models (Reader, Author, Editor), stories, and novels.
+- **View**: The UI layer built with Angular components, styled using **Tailwind CSS** and **Flowbite** for reusable UI components.
+- **Controller**: The component classes in Angular that handle business logic. Each component communicates with services to manage data and update the UI.
 
-```bash
-ng generate --help
-```
+### Role-based Access Control (RBAC)
 
-## Building
+The application has a role-based system where users can have one of the following roles:
 
-To build the project run:
+- **Reader**: A user who can view stories and novels but cannot contribute content.
+- **Author**: A user who can submit new stories for approval.
+- **Editor (Admin)**: A user who can approve content, manage users, and select featured stories (Editor’s Choice).
 
-```bash
-ng build
-```
+### Data Flow
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. **Authentication**: Users authenticate via Firebase Authentication or any custom authentication method.
+2. **Data Management**: Data is fetched and manipulated through Angular services that communicate with the backend (Firebase or custom REST APIs).
+3. **UI Updates**: Components are responsible for presenting the data in the UI, using **RxJS** observables to handle asynchronous data.
 
-## Running unit tests
+## Getting Started
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To get the project up and running locally, follow the steps below:
 
-```bash
-ng test
-```
+## Scripts
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+**Local**: Starts the Angular development server with Hot Module Replacement (HMR) disabled and automatically opens the app in your browser. You can run this with the following command:
 
 ```bash
-ng e2e
+npm run local
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+**Format**: Automatically formats the code using Prettier. You can run this with the following command:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run format
+```
