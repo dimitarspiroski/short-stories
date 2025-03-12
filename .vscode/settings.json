@@ -1,4 +1,4 @@
 {
-  "prettier.singleQuote": false,
-  "prettier.jsxSingleQuote": false
+    "prettier.singleQuote": false,
+    "prettier.jsxSingleQuote": false
 }
