@@ -1,0 +1,17 @@
+@if (storyInfo()) {
+    <card styleConfig="flex bg-white rounded-md">
+        <img
+            [ngClass]="expanded() ? 'max-w-102' : 'max-w-80 rounded-md'"
+            src="img/book_cover.png"
+            alt="Logo"
+            class="transition-all duration-600 rounded-tl-md rounded-bl-md"
+        />
+        <div
+            class="overflow-hidden transition-all duration-600"
+            [ngClass]="expanded() ? 'w-102 p-6' : 'w-0'"
+        >
+            <h2 class="text-2xl font-bold w-96 text-wrap">{{ storyInfo()?.title }}</h2>
+            <p class="text-gray-700 w-96 text-wrap">{{ storyInfo()?.description }}</p>
+        </div>
+    </card>
+}

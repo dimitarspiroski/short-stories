@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
 @import 'tailwindcss';
 @import 'flowbite/src/themes/default';
 @source "../node_modules/flowbite";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+    --font-display: 'EB Garamond', 'serif';
+    --font-primary: 'Baskervville', 'serif';
+
+    /* Colors */
+    --color-cBlack: #0C0C0C;
+    --color-cWhite: #FDFAF7;
+    --color-cLight: #EEEAE4;
+    --color-cBrown-4: #4E3930;
+    --color-cBrown-3: #9F6259;
+    --color-cBrown-2: #AE9E8F;
+    --color-cBrown-1: #CCA996;
+}

@@ -3,10 +3,18 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@common/*": ["src/app/common/*"],
+            "@features/*": ["src/app/features/*"],
+            "@layout/*": ["src/app/features/layout/*"],
+            "@pages/*": ["src/app/features/pages/*"],
+        },
         "outDir": "./dist/out-tsc",
         "strict": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
+        "strictPropertyInitialization": false,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
