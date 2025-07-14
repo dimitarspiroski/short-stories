@@ -1,17 +1,37 @@
 @if (storyInfo()) {
-    <card styleConfig="flex bg-white rounded-md">
+    <card styleConfig="flex relative bg-white rounded-md">
         <img
             [ngClass]="expanded() ? 'max-w-102' : 'max-w-80 rounded-md'"
             src="img/book_cover.png"
             alt="Logo"
-            class="transition-all duration-600 rounded-tl-md rounded-bl-md"
+            class="rounded-tl-md rounded-bl-md transition-all duration-600"
         />
         <div
             class="overflow-hidden transition-all duration-600"
             [ngClass]="expanded() ? 'w-102 p-6' : 'w-0'"
         >
-            <h2 class="text-2xl font-bold w-96 text-wrap">{{ storyInfo()?.title }}</h2>
-            <p class="text-gray-700 w-96 text-wrap">{{ storyInfo()?.description }}</p>
+            <h2 class="w-96 text-2xl font-bold text-wrap">{{ storyInfo()?.title }}</h2>
+            <p class="w-96 text-wrap text-gray-700">{{ storyInfo()?.description }}</p>
         </div>
+
+        @if (storyInfo()?.isEditorsPick) {
+            <div
+                class="font-display absolute top-2 right-2 flex items-center justify-between gap-1 rounded-lg bg-white/80 p-2 backdrop-blur-sm"
+            >
+                <svg
+                    width="21"
+                    height="19"
+                    viewBox="0 0 21 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M4.62578 19L6.25078 11.975L0.800781 7.25L8.00078 6.625L10.8008 0L13.6008 6.625L20.8008 7.25L15.3508 11.975L16.9758 19L10.8008 15.275L4.62578 19Z"
+                        fill="#9F6259"
+                    />
+                </svg>
+                <span>Editor's Pick</span>
+            </div>
+        }
     </card>
 }
