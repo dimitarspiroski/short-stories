@@ -5,6 +5,5 @@ import { IconsComponent } from '@common/components/icons/icons.component';
     selector: 'app-footer',
     imports: [IconsComponent],
     templateUrl: './footer.component.html',
-    styleUrl: './footer.component.css',
 })
 export class FooterComponent {}

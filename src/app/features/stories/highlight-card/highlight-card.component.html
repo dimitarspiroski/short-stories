@@ -1,7 +1,7 @@
 @if (storyInfo()) {
-    <card styleConfig="flex relative bg-white rounded-md">
+    <card styleConfig="flex relative bg-white rounded-md text-nowrap">
         <img
-            [ngClass]="expanded() ? 'max-w-102' : 'max-w-80 rounded-md'"
+            [ngClass]="expanded() ? 'max-w-102' : 'max-w-80 cursor-pointer rounded-md'"
             src="img/book_cover.png"
             alt="Logo"
             class="rounded-tl-md rounded-bl-md transition-all duration-600"

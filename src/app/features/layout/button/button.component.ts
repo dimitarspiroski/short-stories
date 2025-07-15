@@ -5,7 +5,6 @@ import { ButtonSize, ButtonType } from '@common/enums';
     selector: 'button-component',
     imports: [],
     templateUrl: './button.component.html',
-    styleUrl: './button.component.css',
 })
 export class ButtonComponent {
     buttonText = input('');

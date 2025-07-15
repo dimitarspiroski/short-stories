@@ -1,1 +1,1 @@
-export type { AuthorInfo, StoryInfo } from './stories.type';
+export type { AuthorInfo, StoryInfo, CategoryInfo } from './stories.type';

@@ -1,6 +1,6 @@
 <pen-overlay class="absolute top-0 left-1/2 block" />
 <section class="flex flex-col gap-64">
-    <h1 class="font-primary mt-64 ml-64 max-w-2xl text-6xl">
+    <h1 class="font-primary z-100 mt-64 ml-64 max-w-2xl text-6xl">
         Wander through words, discover new worlds
     </h1>
     <h1 class="self-center text-2xl">
@@ -8,7 +8,7 @@
         realms of wonder
     </h1>
 </section>
-<section class="flex gap-4 min-h-[700px] justify-center items-center">
+<section class="flex min-h-[700px] items-center justify-center gap-4">
     @for (story of editorsPick(); track $index) {
         <highlight-card
             [storyInfo]="story"
@@ -16,4 +16,28 @@
             [expanded]="story.id === highlightedCardId()"
         />
     }
+</section>
+<section class="flex flex-col gap-12 p-12">
+    <h1 class="font-primary text-3xl">Popular stories</h1>
+    <div class="grid grid-cols-5 gap-4">
+        @for (story of popularStories(); track $index) {
+            <story-card [storyInfo]="story" />
+        }
+    </div>
+</section>
+<section class="flex flex-col gap-12 p-12">
+    <h1 class="font-primary text-3xl">Popular authors</h1>
+    <div class="grid grid-cols-{{ popularAuthors().length }} gap-4">
+        @for (author of popularAuthors(); track $index) {
+            <author-card [authorInfo]="author" />
+        }
+    </div>
+</section>
+<section class="flex flex-col gap-12 p-12">
+    <h1 class="font-primary text-3xl">Categories</h1>
+    <div class="grid grid-cols-4 gap-4">
+        @for (category of categoriesInfo(); track $index) {
+            <category-card [categoryInfo]="category" />
+        }
+    </div>
 </section>

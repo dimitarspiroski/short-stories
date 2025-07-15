@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-contact',
-  imports: [],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+    selector: 'app-contact',
+    imports: [],
+    templateUrl: './contact.component.html',
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}

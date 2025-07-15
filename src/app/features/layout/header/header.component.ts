@@ -7,7 +7,6 @@ import { ButtonType } from '@common/enums';
     selector: 'header-component',
     imports: [RouterLink, AvatarDropdownComponent],
     templateUrl: './header.component.html',
-    styleUrl: './header.component.css',
 })
 export class HeaderComponent {
     buttonType = ButtonType;

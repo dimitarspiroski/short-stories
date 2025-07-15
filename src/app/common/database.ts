@@ -390,3 +390,46 @@ export const stories: StoryInfo[] = [
         isEditorsPick: false,
     },
 ];
+
+export const categories = [
+    {
+        categoryName: 'Fantasy',
+        noOfStories: 153,
+        categoryImgSrc: 'img/fantasy.jpg',
+    },
+    {
+        categoryName: 'Romance',
+        noOfStories: 124,
+        categoryImgSrc: 'img/romance.jpg',
+    },
+    {
+        categoryName: 'Drama',
+        noOfStories: 232,
+        categoryImgSrc: 'img/drama.jpg',
+    },
+    {
+        categoryName: 'Horror',
+        noOfStories: 93,
+        categoryImgSrc: 'img/horror.jpg',
+    },
+    {
+        categoryName: 'Science Fiction',
+        noOfStories: 145,
+        categoryImgSrc: 'img/sci-fi.jpg',
+    },
+    {
+        categoryName: 'Thriller',
+        noOfStories: 276,
+        categoryImgSrc: 'img/thriller.jpg',
+    },
+    {
+        categoryName: 'Cyberpunk',
+        noOfStories: 86,
+        categoryImgSrc: 'img/cyberpunk.jpg',
+    },
+    {
+        categoryName: 'History',
+        noOfStories: 99,
+        categoryImgSrc: 'img/history.jpg',
+    },
+];

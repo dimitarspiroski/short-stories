@@ -17,3 +17,9 @@ export type AuthorInfo = {
     noOfFollowers: number;
     tags: string[];
 };
+
+export type CategoryInfo = {
+    categoryName: string;
+    noOfStories: number;
+    categoryImgSrc?: string;
+};

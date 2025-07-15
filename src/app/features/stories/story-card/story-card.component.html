@@ -1,1 +1,18 @@
-<p>story-card works!</p>
+@if (storyInfo()) {
+    <card styleConfig="flex flex-col rounded-md bg-white text-nowrap min-h-[420px] max-w-[380px]"
+        ><img
+            src="img/book_cover.png"
+            alt="Logo"
+            class="flex max-w-sm cursor-pointer rounded-tl-md rounded-tr-md transition-all duration-600"
+        />
+        <div class="p-4">
+            <h1 class="line-clamp-2 min-h-[56px] text-2xl font-bold text-wrap">
+                {{ storyInfo()?.title }}
+            </h1>
+        </div>
+        <div class="flex items-center gap-2 p-4">
+            <avatar />
+            <span class="text-cBlack text-sm"> {{ storyInfo()?.author?.authorName }}</span>
+        </div>
+    </card>
+}

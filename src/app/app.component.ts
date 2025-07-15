@@ -10,7 +10,6 @@ import { FooterComponent } from './features/layout/footer/footer.component';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
     imports: [
         ReactiveFormsModule,
         CommonModule,

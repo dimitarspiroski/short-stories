@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-story',
-  imports: [],
-  templateUrl: './story.component.html',
-  styleUrl: './story.component.css'
+    selector: 'app-story',
+    imports: [],
+    templateUrl: './story.component.html',
 })
-export class StoryComponent {
-
-}
+export class StoryComponent {}
