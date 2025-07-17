@@ -8,15 +8,11 @@
         realms of wonder
     </h1>
 </section>
-<section class="flex min-h-[700px] items-center justify-center gap-4">
-    @for (story of editorsPick(); track $index) {
-        <highlight-card
-            [storyInfo]="story"
-            (click)="expandHighlight(story.id)"
-            [expanded]="story.id === highlightedCardId()"
-        />
-    }
+
+<section>
+    <featured-stories />
 </section>
+
 <section class="flex flex-col gap-12 p-12">
     <h1 class="font-primary text-3xl">Popular stories</h1>
     <div class="grid grid-cols-5 gap-4">
@@ -27,7 +23,7 @@
 </section>
 <section class="flex flex-col gap-12 p-12">
     <h1 class="font-primary text-3xl">Popular authors</h1>
-    <div class="grid grid-cols-{{ popularAuthors().length }} gap-4">
+    <div class="grid grid-cols-6 gap-4">
         @for (author of popularAuthors(); track $index) {
             <author-card [authorInfo]="author" />
         }
