@@ -6,6 +6,6 @@ import { Component, input } from '@angular/core';
     templateUrl: './avatar.component.html',
 })
 export class AvatarComponent {
-    width = input<string>('h-12');
-    height = input<string>('w-12');
+    width = input<string>('w-12');
+    height = input<string>('h-12');
 }

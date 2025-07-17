@@ -10,4 +10,5 @@ export class ButtonComponent {
     buttonText = input('');
     buttonType = input(ButtonType.default);
     buttonSize = input(ButtonSize.small);
+    styleConfig = input<string>('');
 }

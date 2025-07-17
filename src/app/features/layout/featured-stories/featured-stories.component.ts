@@ -1,4 +1,4 @@
-import { Component, effect, input, Input, Signal, signal } from '@angular/core';
+import { Component, effect, Signal, signal } from '@angular/core';
 import { stories } from '@common/database';
 import { StoryInfo } from '@common/types';
 import { HighlightCardComponent } from '@features/stories/highlight-card/highlight-card.component';

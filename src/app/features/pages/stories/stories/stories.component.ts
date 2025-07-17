@@ -1,4 +1,4 @@
-import { Component, computed, ElementRef, signal, ViewChild } from '@angular/core';
+import { Component, computed, ElementRef, signal, viewChild } from '@angular/core';
 import { stories } from '@common/database';
 import { StoryInfo } from '@common/types';
 import { FeaturedStoriesComponent } from '@features/layout/featured-stories/featured-stories.component';
@@ -11,7 +11,7 @@ import { PaginationComponent } from '@features/layout/pagination/pagination.comp
     templateUrl: './stories.component.html',
 })
 export class StoriesComponent {
-    @ViewChild('paginationTop', { static: false }) paginationTop: ElementRef;
+    paginationTop = viewChild<ElementRef>('paginationTop');
 
     pages = computed<number[]>(() => Array.from({ length: this.totalPages() }, (_, i) => i + 1));
     currentStories = computed<StoryInfo[]>(() =>
@@ -33,8 +33,11 @@ export class StoriesComponent {
     }
 
     private scrollToTop(): void {
-        if (this.paginationTop) {
-            this.paginationTop.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (this.paginationTop()) {
+            this.paginationTop()?.nativeElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
         }
     }
 }
