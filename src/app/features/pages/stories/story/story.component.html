@@ -1,1 +1,54 @@
-<p>story works!</p>
+@if (storyContent()) {
+    <div class="grid h-screen grid-cols-3 gap-8 px-48">
+        <section class="col-span-2 flex flex-col gap-8">
+            <div class="flex flex-col gap-8 rounded-md bg-white p-16">
+                <h1 class="text-center text-4xl">{{ storyInfo()?.title }}</h1>
+                <p class="text-lg">
+                    {{ currentPage() }}
+                </p>
+                <div class="flex items-center justify-between">
+                    @if (minutesLeft() > 0) {
+                        <p class="font-display">{{ minutesLeft() }} minutes left in story</p>
+                    } @else {
+                        <p class="font-display">Completed</p>
+                    }
+
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="border-cBrown-3 text-cBrown-3 hover:bg-cBrown-3/90 flex h-10 cursor-pointer items-center justify-center rounded-md border-1 border-s bg-white px-4 text-base font-medium hover:text-white"
+                            (click)="previousPage()"
+                        >
+                            Previous page
+                        </button>
+                        <button
+                            class="border-cBrown-3 text-cBrown-3 hover:bg-cBrown-3/90 flex h-10 cursor-pointer items-center justify-center rounded-md border-1 border-s bg-white px-4 text-base font-medium hover:text-white"
+                            (click)="nextPage()"
+                        >
+                            Next page
+                        </button>
+                    </div>
+                    <p class="font-display">
+                        Page {{ currentPageNumber() }}/{{ totalPageNumber() }}
+                    </p>
+                </div>
+            </div>
+            <div>TEST</div>
+        </section>
+        <section class="col-span-1 grid grid-rows-3 gap-4">
+            <div class="flex flex-col gap-6 rounded-md bg-white p-6">
+                <div class="flex items-center justify-start gap-4">
+                    <avatar />
+                    <div>
+                        <h1 class="text-2xl">{{ authorInfo()?.authorName }}</h1>
+                        <p class="font-display">(b. {{ authorInfo()?.yearOfBirth }})</p>
+                    </div>
+                </div>
+                <p>{{ authorInfo()?.bio }}</p>
+            </div>
+            <div class="rounded-md bg-white p-6">
+                <h1 class="text-2xl">Other stories by {{ authorInfo()?.authorName }}</h1>
+            </div>
+            <div class="rounded-md bg-white p-6"><h1 class="text-2xl">Similar stories</h1></div>
+        </section>
+    </div>
+}

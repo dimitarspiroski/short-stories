@@ -16,10 +16,23 @@ export type AuthorInfo = {
     noOfStories: number;
     noOfFollowers: number;
     tags: string[];
+    bio: string;
+    yearOfBirth: number;
 };
 
 export type CategoryInfo = {
     categoryName: string;
     noOfStories: number;
     categoryImgSrc?: string;
+};
+
+export type StoriesContent = {
+    storiesContent: StoryContent[];
+};
+
+export type StoryContent = {
+    id: number;
+    storyId: number;
+    authorId: number;
+    content: Record<number, string>;
 };
