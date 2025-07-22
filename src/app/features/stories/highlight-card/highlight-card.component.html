@@ -7,11 +7,29 @@
             class="rounded-tl-md rounded-bl-md transition-all duration-600"
         />
         <div
-            class="overflow-hidden transition-all duration-600"
+            class="flex flex-col justify-between overflow-hidden transition-all duration-600"
             [ngClass]="expanded() ? 'w-102 p-6' : 'w-0'"
         >
-            <h2 class="w-96 text-2xl font-bold text-wrap">{{ storyInfo()?.title }}</h2>
-            <p class="w-96 text-wrap text-gray-700">{{ storyInfo()?.description }}</p>
+            <div>
+                <h2 class="w-96 text-2xl font-bold text-wrap">{{ storyInfo()?.title }}</h2>
+                <p class="w-96 text-wrap text-gray-700">{{ storyInfo()?.description }}</p>
+            </div>
+            <div class="flex justify-center gap-2">
+                <button-component
+                    buttonText="Read now"
+                    [buttonSize]="buttonSize.medium"
+                    [icon]="icon.bookOutline"
+                    routerLink="stories/{{ storyInfo()?.id }}"
+                />
+                <button-component
+                    [buttonType]="buttonType.outline"
+                    buttonText="Save for later"
+                    [buttonSize]="buttonSize.medium"
+                    styleConfig="group"
+                    [icon]="icon.bookmarkOutline"
+                    [iconStyle]="'text-cBrown-3 text-sm group-hover:text-white'"
+                />
+            </div>
         </div>
 
         @if (storyInfo()?.isEditorsPick) {

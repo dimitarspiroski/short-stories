@@ -1,8 +1,11 @@
 <button
     type="button"
-    class="me-2 mb-2 rounded-md px-5 py-2.5 cursor-pointer font-medium text-center focus:outline-none focus:ring-4 {{
+    class="flex items-center gap-1 rounded-md px-5 py-2.5 cursor-pointer font-medium text-center {{
         buttonType()
     }} {{ buttonSize() }} {{ styleConfig() }}"
 >
+    @if (icon()) {
+        <icon [icon]="icon()" [iconStyle]="iconStyle()" />
+    }
     {{ buttonText() }}
 </button>

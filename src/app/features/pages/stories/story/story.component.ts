@@ -4,10 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { authors, stories, storiesContent } from '@common/database';
 import { StoryContent } from '@common/types';
 import { AvatarComponent } from '@common/components/avatar/avatar.component';
+import { ButtonComponent } from '@features/layout/button/button.component';
+import { ButtonType } from '@common/enums';
 
 @Component({
     selector: 'app-story',
-    imports: [AvatarComponent],
+    imports: [AvatarComponent, ButtonComponent],
     templateUrl: './story.component.html',
 })
 export class StoryComponent {
@@ -30,6 +32,8 @@ export class StoryComponent {
     authorInfo = computed(() =>
         authors.find((author) => author.id === this.storyContent()?.authorId)
     );
+
+    protected readonly buttonType = ButtonType;
 
     previousPage(): void {
         if (this.currentPageNumber() > 1) {
