@@ -1,9 +1,9 @@
 @if (storyContent()) {
-    <div class="grid grid-cols-3 gap-8 px-4 md:px-8 lg:px-10 min-h-footer">
+    <div class="min-h-footer grid grid-cols-3 gap-8 px-4 md:px-8 lg:px-10">
         <section class="col-span-2 flex flex-col gap-8">
             <div class="flex h-full flex-col justify-between gap-8 rounded-md bg-white p-12">
                 <div class="flex flex-col gap-6">
-                    <h1 class="text-center text-4xl">{{ storyInfo()?.title }}</h1>
+                    <h1 class="text-center text-4xl" #title>{{ storyInfo()?.title }}</h1>
                     <p class="text-lg">
                         {{ currentPage() }}
                     </p>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </section>
-        <section class="col-span-1 grid grid-rows-3 gap-4">
+        <section class="grid-rows-auto col-span-1 grid gap-4">
             <div class="flex flex-col gap-6 rounded-md bg-white p-6">
                 <div class="flex items-center justify-start gap-4">
                     <avatar />
@@ -44,10 +44,50 @@
                 </div>
                 <p>{{ authorInfo()?.bio }}</p>
             </div>
-            <div class="rounded-md bg-white p-6">
+            <div class="flex flex-col gap-4 rounded-md bg-white p-6">
                 <h1 class="text-2xl">Other stories by {{ authorInfo()?.authorName }}</h1>
+
+                @for (story of moreFromAuthor(); track $index) {
+                    <div
+                        class="hover:border-cBrown-3 flex w-full cursor-pointer flex-col items-center rounded-md border-1 border-gray-200 duration-100 ease-in"
+                    >
+                        <img
+                            class="rounded-md object-cover"
+                            src="img/book_cover_two.jpg"
+                            alt="{{ story.title }}"
+                        />
+                        <h1 class="p-4 text-xl">{{ story.title }}</h1>
+                    </div>
+                }
+
+                <p
+                    class="text-cBrown-3 hover:text-cBrown-3/80 cursor-pointer underline underline-offset-8 duration-100 ease-in"
+                >
+                    See more stories from author
+                </p>
             </div>
-            <div class="rounded-md bg-white p-6"><h1 class="text-2xl">Similar stories</h1></div>
+            <div class="flex flex-col gap-4 rounded-md bg-white p-6">
+                <h1 class="text-2xl">Similar stories</h1>
+
+                @for (story of similarStories(); track $index) {
+                    <div
+                        class="hover:border-cBrown-3 flex w-full cursor-pointer flex-col items-center rounded-md border-1 border-gray-200 duration-100 ease-in"
+                    >
+                        <img
+                            class="rounded-md object-cover"
+                            src="img/book_cover_two.jpg"
+                            alt="{{ story.title }}"
+                        />
+                        <h1 class="p-4 text-xl">{{ story.title }}</h1>
+                    </div>
+                }
+
+                <p
+                    class="text-cBrown-3 hover:text-cBrown-3/80 cursor-pointer underline underline-offset-8 duration-100 ease-in"
+                >
+                    See more similar stories
+                </p>
+            </div>
         </section>
     </div>
 }

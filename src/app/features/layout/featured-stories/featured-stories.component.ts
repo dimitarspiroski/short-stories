@@ -1,7 +1,7 @@
-import { Component, effect, Signal, signal } from '@angular/core';
-import { stories } from '@common/database';
+import { Component, effect, inject, Signal, signal } from '@angular/core';
 import { StoryInfo } from '@common/types';
 import { HighlightCardComponent } from '@features/stories/highlight-card/highlight-card.component';
+import { StoriesStore } from 'src/app/store/stories.store';
 
 @Component({
     selector: 'featured-stories',
@@ -9,7 +9,9 @@ import { HighlightCardComponent } from '@features/stories/highlight-card/highlig
     templateUrl: './featured-stories.component.html',
 })
 export class FeaturedStoriesComponent {
-    storyInfo: Signal<StoryInfo[]> = signal(stories);
+    private store = inject(StoriesStore);
+
+    storyInfo: Signal<StoryInfo[]> = this.store.storyInfo;
     editorsPick = signal<StoryInfo[]>([]);
     highlightedCardId = signal<number>(0);
 

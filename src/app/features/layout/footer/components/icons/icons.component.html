@@ -1,0 +1,7 @@
+<ul class="flex items-center gap-4">
+    @for (icon of icons; track $index) {
+        <li>
+            <icon [icon]="icon.name" [iconStyle]="icon.style"></icon>
+        </li>
+    }
+</ul>

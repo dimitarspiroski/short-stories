@@ -1,12 +1,12 @@
-import { Component, effect, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, effect, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { PenOverlayComponent } from './components/pen-overlay/pen-overlay.component';
-import { stories, authors, categories } from '@common/database';
 import { AuthorInfo, StoryInfo } from '@common/types';
 import { StoryCardComponent } from '@features/stories/story-card/story-card.component';
 import { AuthorCardComponent } from '@features/stories/author-card/author-card.component';
 import { CategoryInfo } from '@common/types';
 import { CategoryCardComponent } from '@features/stories/category-card/category-card.component';
 import { FeaturedStoriesComponent } from '@features/layout/featured-stories/featured-stories.component';
+import { StoriesStore } from 'src/app/store/stories.store';
 
 @Component({
     selector: 'home',
@@ -20,9 +20,11 @@ import { FeaturedStoriesComponent } from '@features/layout/featured-stories/feat
     templateUrl: './home.component.html',
 })
 export class HomeComponent {
-    storyInfo: Signal<StoryInfo[]> = signal(stories);
-    authorsInfo: Signal<AuthorInfo[]> = signal(authors);
-    categoriesInfo: Signal<CategoryInfo[]> = signal(categories);
+    private store = inject(StoriesStore);
+
+    storyInfo: Signal<StoryInfo[]> = this.store.storyInfo;
+    authorsInfo: Signal<AuthorInfo[]> = this.store.authorsInfo;
+    categoriesInfo: Signal<CategoryInfo[]> = this.store.categoriesInfo;
     popularStories = signal<StoryInfo[]>([]);
     popularAuthors = signal<AuthorInfo[]>([]);
 

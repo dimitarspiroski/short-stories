@@ -17,37 +17,27 @@
             <div class="flex justify-center gap-2">
                 <button-component
                     buttonText="Read now"
-                    [buttonSize]="buttonSize.medium"
-                    [icon]="icon.bookOutline"
                     routerLink="/stories/{{ storyInfo()?.id }}"
+                    [buttonSize]="buttonSize.medium"
+                    [icon]="bookIcon.name"
+                    [iconStyle]="bookIcon.style"
                 />
                 <button-component
-                    [buttonType]="buttonType.outline"
                     buttonText="Save for later"
-                    [buttonSize]="buttonSize.medium"
                     styleConfig="group"
-                    [icon]="icon.bookmarkOutline"
-                    [iconStyle]="'text-cBrown-3 text-sm group-hover:text-white'"
+                    [buttonType]="buttonType.outline"
+                    [buttonSize]="buttonSize.medium"
+                    [icon]="bookmarkIcon.name"
+                    [iconStyle]="bookmarkIcon.style"
                 />
             </div>
         </div>
 
         @if (storyInfo()?.isEditorsPick) {
             <div
-                class="font-display absolute top-2 right-2 flex items-center justify-between gap-1 rounded-lg bg-white/80 p-2 backdrop-blur-sm"
+                class="font-display absolute top-2 right-2 flex items-center justify-between gap-1 rounded-lg bg-white/80 p-2 backdrop-blur-sm select-none"
             >
-                <svg
-                    width="21"
-                    height="19"
-                    viewBox="0 0 21 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M4.62578 19L6.25078 11.975L0.800781 7.25L8.00078 6.625L10.8008 0L13.6008 6.625L20.8008 7.25L15.3508 11.975L16.9758 19L10.8008 15.275L4.62578 19Z"
-                        fill="#9F6259"
-                    />
-                </svg>
+                <icon [icon]="starIcon.name" />
                 <span>Editor's Pick</span>
             </div>
         }
