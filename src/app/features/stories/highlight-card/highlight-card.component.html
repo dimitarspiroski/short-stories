@@ -1,45 +1,45 @@
 @if (storyInfo()) {
-    <card styleConfig="flex relative bg-white rounded-md text-nowrap">
-        <img
-            [ngClass]="expanded() ? 'max-w-106' : 'max-w-80 cursor-pointer rounded-md'"
-            src="img/book_cover.png"
-            alt="Logo"
-            class="rounded-tl-md rounded-bl-md transition-all duration-600"
+  <card styleConfig="flex relative bg-white rounded-md text-nowrap">
+    <img
+      [ngClass]="expanded() ? 'max-w-106' : 'max-w-80 cursor-pointer rounded-md'"
+      src="img/book_cover.png"
+      alt="Logo"
+      class="rounded-tl-md rounded-bl-md transition-all duration-600"
+    />
+    <div
+      class="flex flex-col justify-between overflow-hidden transition-all duration-600"
+      [ngClass]="expanded() ? 'w-102 p-6' : 'w-0'"
+    >
+      <div>
+        <h2 class="w-96 text-2xl font-bold text-wrap">{{ storyInfo()?.title }}</h2>
+        <p class="w-96 text-wrap text-gray-700">{{ storyInfo()?.description }}</p>
+      </div>
+      <div class="flex justify-center gap-2">
+        <button-component
+          buttonText="Read now"
+          routerLink="/stories/{{ storyInfo()?.id }}"
+          [buttonSize]="buttonSize.medium"
+          [icon]="bookIcon.name"
+          [iconStyle]="bookIcon.style"
         />
-        <div
-            class="flex flex-col justify-between overflow-hidden transition-all duration-600"
-            [ngClass]="expanded() ? 'w-102 p-6' : 'w-0'"
-        >
-            <div>
-                <h2 class="w-96 text-2xl font-bold text-wrap">{{ storyInfo()?.title }}</h2>
-                <p class="w-96 text-wrap text-gray-700">{{ storyInfo()?.description }}</p>
-            </div>
-            <div class="flex justify-center gap-2">
-                <button-component
-                    buttonText="Read now"
-                    routerLink="/stories/{{ storyInfo()?.id }}"
-                    [buttonSize]="buttonSize.medium"
-                    [icon]="bookIcon.name"
-                    [iconStyle]="bookIcon.style"
-                />
-                <button-component
-                    buttonText="Save for later"
-                    styleConfig="group"
-                    [buttonType]="buttonType.outline"
-                    [buttonSize]="buttonSize.medium"
-                    [icon]="bookmarkIcon.name"
-                    [iconStyle]="bookmarkIcon.style"
-                />
-            </div>
-        </div>
+        <button-component
+          buttonText="Save for later"
+          styleConfig="group"
+          [buttonType]="buttonType.outline"
+          [buttonSize]="buttonSize.medium"
+          [icon]="bookmarkIcon.name"
+          [iconStyle]="bookmarkIcon.style"
+        />
+      </div>
+    </div>
 
-        @if (storyInfo()?.isEditorsPick) {
-            <div
-                class="font-display absolute top-2 right-2 flex items-center justify-between gap-1 rounded-lg bg-white/80 p-2 backdrop-blur-sm select-none"
-            >
-                <icon [icon]="starIcon.name" />
-                <span>Editor's Pick</span>
-            </div>
-        }
-    </card>
+    @if (storyInfo()?.isEditorsPick) {
+      <div
+        class="font-display absolute top-2 right-2 flex items-center justify-between gap-1 rounded-lg bg-white/80 p-2 backdrop-blur-sm select-none"
+      >
+        <icon [icon]="starIcon.name" />
+        <span>Editor's Pick</span>
+      </div>
+    }
+  </card>
 }

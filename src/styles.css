@@ -6,17 +6,17 @@
 @source "../node_modules/flowbite";
 
 @theme {
-    --font-display: 'EB Garamond', 'serif';
-    --font-primary: 'Baskervville', 'serif';
+  --font-display: 'EB Garamond', 'serif';
+  --font-primary: 'Baskervville', 'serif';
 
-    /* Colors */
-    --color-cBlack: #0c0c0c;
-    --color-cWhite: #fdfaf7;
-    --color-cLight: #eeeae4;
-    --color-cBrown-4: #4e3930;
-    --color-cBrown-3: #9f6259;
-    --color-cBrown-2: #ae9e8f;
-    --color-cBrown-1: #cca996;
+  /* Colors */
+  --color-cBlack: #0c0c0c;
+  --color-cWhite: #fdfaf7;
+  --color-cLight: #eeeae4;
+  --color-cBrown-4: #4e3930;
+  --color-cBrown-3: #9f6259;
+  --color-cBrown-2: #ae9e8f;
+  --color-cBrown-1: #cca996;
 
-    --height-footer: calc(100vh - 330px);
+  --height-footer: calc(100vh - 330px);
 }

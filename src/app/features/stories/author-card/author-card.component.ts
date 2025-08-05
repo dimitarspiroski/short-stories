@@ -4,10 +4,10 @@ import { AvatarComponent } from '@common/components/avatar/avatar.component';
 import { AuthorInfo } from '@common/types';
 
 @Component({
-    selector: 'author-card',
-    imports: [CardComponent, AvatarComponent],
-    templateUrl: './author-card.component.html',
+  selector: 'author-card',
+  imports: [CardComponent, AvatarComponent],
+  templateUrl: './author-card.component.html',
 })
 export class AuthorCardComponent {
-    authorInfo = input<AuthorInfo | null>(null);
+  authorInfo = input<AuthorInfo | null>(null);
 }

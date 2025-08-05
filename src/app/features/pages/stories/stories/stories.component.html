@@ -3,10 +3,10 @@
 <section><featured-stories /></section>
 
 <section class="grid grid-cols-5 gap-4 gap-y-24 p-12" #paginationTop>
-    @for (story of currentStories(); track $index) {
-        <div class="">
-            <story-card [storyInfo]="story" />
-        </div>
-    }
+  @for (story of currentStories(); track $index) {
+    <div class="">
+      <story-card [storyInfo]="story" />
+    </div>
+  }
 </section>
 <section><pagination [pages]="pages()" (pageChange)="setCurrentPage($event)" /></section>

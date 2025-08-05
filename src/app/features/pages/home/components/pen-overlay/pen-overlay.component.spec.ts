@@ -8,9 +8,8 @@ describe('PenOverlayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PenOverlayComponent]
-    })
-    .compileComponents();
+      imports: [PenOverlayComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PenOverlayComponent);
     component = fixture.componentInstance;

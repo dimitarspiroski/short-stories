@@ -1,17 +1,17 @@
 @if (categoryInfo()) {
-    <card styleConfig="group relative overflow-hidden rounded-md cursor-pointer">
-        <img
-            [src]="categoryInfo()?.categoryImgSrc"
-            alt="category_image"
-            class="h-64 w-full overflow-hidden rounded-md object-cover transition duration-300 group-hover:scale-105 group-hover:blur-xs"
-        />
-        <div
-            class="font-display absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-white"
-        >
-            <h1 class="text-4xl">
-                {{ categoryInfo()?.categoryName }}
-            </h1>
-            <h2 class="text-lg">{{ categoryInfo()?.noOfStories }} stories</h2>
-        </div>
-    </card>
+  <card styleConfig="group relative overflow-hidden rounded-md cursor-pointer">
+    <img
+      [src]="categoryInfo()?.categoryImgSrc"
+      alt="category_image"
+      class="h-64 w-full overflow-hidden rounded-md object-cover transition duration-300 group-hover:scale-105 group-hover:blur-xs"
+    />
+    <div
+      class="font-display absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-white"
+    >
+      <h1 class="text-4xl">
+        {{ categoryInfo()?.categoryName }}
+      </h1>
+      <h2 class="text-lg">{{ categoryInfo()?.noOfStories }} stories</h2>
+    </div>
+  </card>
 }

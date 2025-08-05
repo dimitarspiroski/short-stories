@@ -1,72 +1,68 @@
-<div class="flex justify-center items-center gap-12 px-64 py-24 min-h-footer">
-    <section class="flex flex-1 items-center justify-center">
-        <div class="flex flex-col items-start justify-start gap-4">
-            <h1 class="font-display text-4xl">Contact us</h1>
-            <p>If you have any questions or feedback, please reach out to us.</p>
-            <div class="flex flex-col items-start justify-center gap-4 rounded-md bg-white p-12">
-                <ul class="flex flex-col gap-2 text-lg">
-                    <li>{{ 'generalmail@stories.com' }}</li>
-                    <li>{{ '+38900100100' }}</li>
-                    <li>{{ 'Malina Popivanova BB, Skopje, North Macedonia' }}</li>
-                </ul>
-            </div>
+<div class="min-h-footer flex items-center justify-center gap-12 px-64 py-24">
+  <section class="flex flex-1 items-center justify-center">
+    <div class="flex flex-col items-start justify-start gap-4">
+      <h1 class="font-display text-4xl">Contact us</h1>
+      <p>If you have any questions or feedback, please reach out to us.</p>
+      <div class="flex flex-col items-start justify-center gap-4 rounded-md bg-white p-12">
+        <ul class="flex flex-col gap-2 text-lg">
+          <li>{{ 'generalmail@stories.com' }}</li>
+          <li>{{ '+38900100100' }}</li>
+          <li>{{ 'Malina Popivanova BB, Skopje, North Macedonia' }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="flex-1">
+    <form class="flex flex-col items-center justify-center rounded-md bg-white px-8 py-6">
+      <div class="w-full">
+        <div>
+          <label for="first_name" class="mb-2 block text-sm text-gray-900">First name</label>
+          <input
+            type="text"
+            id="first_name"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+            placeholder="e.g. John"
+            required
+          />
         </div>
-    </section>
-    <section class="flex-1">
-        <form class="flex flex-col items-center justify-center rounded-md bg-white px-8 py-6">
-            <div class="w-full">
-                <div>
-                    <label for="first_name" class="mb-2 block text-sm text-gray-900"
-                        >First name</label
-                    >
-                    <input
-                        type="text"
-                        id="first_name"
-                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
-                        placeholder="e.g. John"
-                        required
-                    />
-                </div>
-                <div class="mb-6">
-                    <label for="last_name" class="mb-2 block text-sm text-gray-900"
-                        >Last name</label
-                    >
-                    <input
-                        type="text"
-                        id="last_name"
-                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        placeholder="e.g. Doe"
-                        required
-                    />
-                </div>
-            </div>
-            <div class="mb-6 w-full">
-                <label for="email" class="mb-2 block text-sm text-gray-900">Email address</label>
-                <input
-                    type="email"
-                    id="email"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="name@domain.com"
-                    required
-                />
-            </div>
-            <div class="mb-6 w-full">
-                <label for="message" class="mb-2 block text-sm text-gray-900">Your message</label>
-                <textarea
-                    id="message"
-                    rows="4"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
-                    placeholder="Write your thoughts here..."
-                ></textarea>
-            </div>
+        <div class="mb-6">
+          <label for="last_name" class="mb-2 block text-sm text-gray-900">Last name</label>
+          <input
+            type="text"
+            id="last_name"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="e.g. Doe"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-6 w-full">
+        <label for="email" class="mb-2 block text-sm text-gray-900">Email address</label>
+        <input
+          type="email"
+          id="email"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          placeholder="name@domain.com"
+          required
+        />
+      </div>
+      <div class="mb-6 w-full">
+        <label for="message" class="mb-2 block text-sm text-gray-900">Your message</label>
+        <textarea
+          id="message"
+          rows="4"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+          placeholder="Write your thoughts here..."
+        ></textarea>
+      </div>
 
-            <button-component
-                class="block w-full"
-                [buttonType]="buttonType.default"
-                [buttonSize]="buttonSize.large"
-                [buttonText]="'Send a message'"
-                [styleConfig]="'w-full'"
-            />
-        </form>
-    </section>
+      <button-component
+        class="block w-full"
+        [buttonType]="buttonType.default"
+        [buttonSize]="buttonSize.large"
+        [buttonText]="'Send a message'"
+        [styleConfig]="'w-full'"
+      />
+    </form>
+  </section>
 </div>

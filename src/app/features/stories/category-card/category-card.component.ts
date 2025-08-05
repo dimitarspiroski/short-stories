@@ -4,10 +4,10 @@ import { CategoryInfo } from '@common/types';
 import { CardComponent } from '@features/layout/card/card.component';
 
 @Component({
-    selector: 'category-card',
-    imports: [CommonModule, CardComponent],
-    templateUrl: './category-card.component.html',
+  selector: 'category-card',
+  imports: [CommonModule, CardComponent],
+  templateUrl: './category-card.component.html',
 })
 export class CategoryCardComponent {
-    categoryInfo = input<CategoryInfo | null>(null);
+  categoryInfo = input<CategoryInfo | null>(null);
 }

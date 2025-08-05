@@ -1,9 +1,9 @@
 <div class="flex min-h-[700px] items-center justify-center gap-8">
-    @for (story of editorsPick(); track $index) {
-        <highlight-card
-            [storyInfo]="story"
-            [expanded]="story.id === highlightedCardId()"
-            (click)="expandHighlight(story.id)"
-        />
-    }
+  @for (story of editorsPick(); track $index) {
+    <highlight-card
+      [storyInfo]="story"
+      [expanded]="story.id === highlightedCardId()"
+      (click)="expandHighlight(story.id)"
+    />
+  }
 </div>

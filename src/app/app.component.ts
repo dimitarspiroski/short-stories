@@ -6,21 +6,21 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './features/layout/footer/footer.component';
 import { StoriesStore } from './store/stories.store';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    imports: [HeaderComponent, FooterComponent, RouterOutlet],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  imports: [HeaderComponent, FooterComponent, RouterOutlet],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    private destroy$ = new Subject<void>();
-    private store = inject(StoriesStore);
+  private destroy$ = new Subject<void>();
+  private store = inject(StoriesStore);
 
-    ngOnInit(): void {
-        initFlowbite();
-        this.store.load();
-    }
+  ngOnInit(): void {
+    initFlowbite();
+    this.store.load();
+  }
 
-    ngOnDestroy(): void {
-        this.destroy$.next();
-        this.destroy$.complete();
-    }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 }

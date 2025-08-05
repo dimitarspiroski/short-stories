@@ -9,52 +9,49 @@ import { FeaturedStoriesComponent } from '@features/layout/featured-stories/feat
 import { StoriesStore } from 'src/app/store/stories.store';
 
 @Component({
-    selector: 'home',
-    imports: [
-        PenOverlayComponent,
-        StoryCardComponent,
-        AuthorCardComponent,
-        CategoryCardComponent,
-        FeaturedStoriesComponent,
-    ],
-    templateUrl: './home.component.html',
+  selector: 'home',
+  imports: [
+    PenOverlayComponent,
+    StoryCardComponent,
+    AuthorCardComponent,
+    CategoryCardComponent,
+    FeaturedStoriesComponent,
+  ],
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {
-    private store = inject(StoriesStore);
+  private store = inject(StoriesStore);
 
-    storyInfo: Signal<StoryInfo[]> = this.store.storyInfo;
-    authorsInfo: Signal<AuthorInfo[]> = this.store.authorsInfo;
-    categoriesInfo: Signal<CategoryInfo[]> = this.store.categoriesInfo;
-    popularStories = signal<StoryInfo[]>([]);
-    popularAuthors = signal<AuthorInfo[]>([]);
+  storyInfo: Signal<StoryInfo[]> = this.store.storyInfo;
+  authorsInfo: Signal<AuthorInfo[]> = this.store.authorsInfo;
+  categoriesInfo: Signal<CategoryInfo[]> = this.store.categoriesInfo;
+  popularStories = signal<StoryInfo[]>([]);
+  popularAuthors = signal<AuthorInfo[]>([]);
 
-    constructor() {
-        effect(() => {
-            this.setPopularStories(this.storyInfo(), this.popularStories);
-            this.setPopularAuthors(this.authorsInfo(), this.popularAuthors);
-        });
-    }
+  constructor() {
+    effect(() => {
+      this.setPopularStories(this.storyInfo(), this.popularStories);
+      this.setPopularAuthors(this.authorsInfo(), this.popularAuthors);
+    });
+  }
 
-    private setPopularStories(stories: StoryInfo[], infoToSet: WritableSignal<StoryInfo[]>): void {
-        this.setPopular(stories, infoToSet, 5);
-    }
+  private setPopularStories(stories: StoryInfo[], infoToSet: WritableSignal<StoryInfo[]>): void {
+    this.setPopular(stories, infoToSet, 5);
+  }
 
-    private setPopularAuthors(
-        authors: AuthorInfo[],
-        infoToSet: WritableSignal<AuthorInfo[]>
-    ): void {
-        this.setPopular(authors, infoToSet, 6);
-    }
+  private setPopularAuthors(authors: AuthorInfo[], infoToSet: WritableSignal<AuthorInfo[]>): void {
+    this.setPopular(authors, infoToSet, 6);
+  }
 
-    private setPopular(
-        array: StoryInfo[] | AuthorInfo[],
-        infoToSet: WritableSignal<StoryInfo[] | AuthorInfo[]>,
-        numberOfItems: number
-    ): void {
-        const maxIndex = array.length - numberOfItems - 1;
-        const firstIndex = Math.floor(Math.random() * maxIndex) + 1;
-        const result = array.slice(firstIndex, firstIndex + numberOfItems);
+  private setPopular(
+    array: StoryInfo[] | AuthorInfo[],
+    infoToSet: WritableSignal<StoryInfo[] | AuthorInfo[]>,
+    numberOfItems: number
+  ): void {
+    const maxIndex = array.length - numberOfItems - 1;
+    const firstIndex = Math.floor(Math.random() * maxIndex) + 1;
+    const result = array.slice(firstIndex, firstIndex + numberOfItems);
 
-        infoToSet.set(result);
-    }
+    infoToSet.set(result);
+  }
 }

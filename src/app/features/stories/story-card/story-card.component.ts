@@ -5,10 +5,10 @@ import { AvatarComponent } from '@common/components/avatar/avatar.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'story-card',
-    imports: [CardComponent, AvatarComponent, RouterLink],
-    templateUrl: './story-card.component.html',
+  selector: 'story-card',
+  imports: [CardComponent, AvatarComponent, RouterLink],
+  templateUrl: './story-card.component.html',
 })
 export class StoryCardComponent {
-    storyInfo = input<StoryInfo | null>(null);
+  storyInfo = input<StoryInfo | null>(null);
 }

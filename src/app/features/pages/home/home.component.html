@@ -1,39 +1,39 @@
 <pen-overlay class="absolute top-0 left-1/2 block" />
 <section class="flex flex-col gap-64">
-    <h1 class="font-primary z-100 mt-64 ml-64 max-w-2xl text-6xl">
-        Wander through words, discover new worlds
-    </h1>
-    <h1 class="self-center text-2xl">
-        Step into shadowed worlds where ink drips and new authors guide you through undiscovered
-        realms of wonder
-    </h1>
+  <h1 class="font-primary z-100 mt-64 ml-64 max-w-2xl text-6xl">
+    Wander through words, discover new worlds
+  </h1>
+  <h1 class="self-center text-2xl">
+    Step into shadowed worlds where ink drips and new authors guide you through undiscovered realms
+    of wonder
+  </h1>
 </section>
 
 <section>
-    <featured-stories />
+  <featured-stories />
 </section>
 
 <section class="flex flex-col gap-12 p-12">
-    <h1 class="font-primary text-3xl">Popular stories</h1>
-    <div class="grid grid-cols-5 gap-4">
-        @for (story of popularStories(); track $index) {
-            <story-card [storyInfo]="story" />
-        }
-    </div>
+  <h1 class="font-primary text-3xl">Popular stories</h1>
+  <div class="grid grid-cols-5 gap-4">
+    @for (story of popularStories(); track $index) {
+      <story-card [storyInfo]="story" />
+    }
+  </div>
 </section>
 <section class="flex flex-col gap-12 p-12">
-    <h1 class="font-primary text-3xl">Popular authors</h1>
-    <div class="grid grid-cols-6 gap-4">
-        @for (author of popularAuthors(); track $index) {
-            <author-card [authorInfo]="author" />
-        }
-    </div>
+  <h1 class="font-primary text-3xl">Popular authors</h1>
+  <div class="grid grid-cols-6 gap-4">
+    @for (author of popularAuthors(); track $index) {
+      <author-card [authorInfo]="author" />
+    }
+  </div>
 </section>
 <section class="flex flex-col gap-12 p-12">
-    <h1 class="font-primary text-3xl">Categories</h1>
-    <div class="grid grid-cols-4 gap-4">
-        @for (category of categoriesInfo(); track $index) {
-            <category-card [categoryInfo]="category" />
-        }
-    </div>
+  <h1 class="font-primary text-3xl">Categories</h1>
+  <div class="grid grid-cols-4 gap-4">
+    @for (category of categoriesInfo(); track $index) {
+      <category-card [categoryInfo]="category" />
+    }
+  </div>
 </section>
